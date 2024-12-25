@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="financial-app.png">
+</head>
+<body>
+    <header>
+        <h1>💰 Personal Finance Tracker</h1>
+        <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
+    </header>
+    <main>
+        <section class="totals-container">
+            <div class="card income-card" aria-label="Total Income">
+                <h3>Income</h3>
+                <p id="income">₹0.00</p>
+            </div>
+            <div class="card expenses-card" aria-label="Total Expenses">
+                <h3>Expenses</h3>
+                <p id="expenses">₹0.00</p>
+            </div>
+            <div class="card savings-card" aria-label="Total Savings">
+                <h3>Savings</h3>
+                <p id="savings">₹0.00</p>
+            </div>
+        </section>
+        <section class="add-transaction">
+            <form id="transaction-form">
+                <input type="number" id="amount" placeholder="Amount" required aria-label="Transaction Amount">
+                <input type="text" id="description" placeholder="Description" required aria-label="Transaction Description">
+                <select id="transaction-type" aria-label="Transaction Type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit" class="btn">Add Transaction</button>
+            </form>
+        </section>
+        <section class="transactions">
+            <h2>Recent Transactions</h2>
+            <ul id="transactions-list"></ul>
+        </section>
+        <div class="filter-export-container">
+            <select id="filter-transactions" aria-label="Filter Transactions">
+                <option value="all">All</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button id="export-csv" class="export-btn">Export as CSV</button>
+        </div>
+        <div>
+            <h3>Summary Chart</h3>
+            <div class="chart-container">
+                <canvas id="summary-chart"></canvas>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Created by Arun A | © 2024</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
